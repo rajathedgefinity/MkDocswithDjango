@@ -2,8 +2,10 @@ import os
 
 from django.conf import settings
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.staticfiles.views import serve
 
+@login_required
 def serve_docs(request, path):
     docs_path = os.path.join(settings.DOCS_ROOT, path)
 
@@ -12,4 +14,5 @@ def serve_docs(request, path):
 
     path = os.path.join(settings.DOCS_STATIC_NAMESPACE, path)
 
-    return serve(request, path)
+    return serve(request, path) # In Development
+    # return.serve(request, path, insecure=True) #In Production

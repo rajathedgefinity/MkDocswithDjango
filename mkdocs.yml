@@ -48,9 +48,12 @@ markdown_extensions:
   - toc:
       permalink: true
 
+plugins:
+  - search
+  - minify:
+      minify_html: true
 
-
-pages:
+nav:
   - Home: index.md
   - Article: article.md
   - Django: django.md
