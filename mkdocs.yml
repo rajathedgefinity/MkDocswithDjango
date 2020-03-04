@@ -5,6 +5,7 @@ site_dir: 'docu/static/mkdocs_build'
 
 theme:
   name: 'material'
+  custom_dir: 'theme'
   language: 'en'
 
 # Repository
